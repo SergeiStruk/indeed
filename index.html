@@ -3,17 +3,17 @@
     #indJobContent {
         padding-bottom: 5px;
     }
-
+    
     #indJobContent .company_location {
         font-size: 11px;
         overflow: hidden;
     }
-
+    
     #indJobContent .job {
         display: block;
         overflow: hidden;
     }
-
+    
     #indeed_widget_wrapper {
         position: relative;
         font-family: Arial, sans-serif;
@@ -26,36 +26,36 @@
         color: #000000;
         background-color: #FFFFFF;
     }
-
+    
     #indeed_widget_wrapper,
     #indeed_link a {
         color: #000000;
         text-decoration: none;
     }
-
+    
     .indeed_search_wrapper {
         clear: both;
         font-size: 15px;
     }
-
+    
     .indeed_search_wrapper label {
         line-height: inherit;
         text-align: left;
         padding: 5px;
     }
-
+    
     .indeed_search_wrapper input[type='text'] {
         font-size: 12px;
     }
-
+    
     .indeed_search_wrapper .qc {
         float: left;
     }
-
+    
     .indeed_search_wrapper .lc {
         float: left;
     }
-
+    
     #indeed_link {
         position: absolute;
         bottom: 1px;
@@ -63,43 +63,43 @@
         clear: both;
         font-size: 12px;
     }
-
+    
     #results .job {
         padding: 5px;
     }
-
+    
     #pagination {
         clear: both;
         font-size: 16px;
         padding: 5px;
     }
-
+    
     .jobtitle {
         font-size: 16px;
     }
-
+    
     .company {
         font-size: 15px;
     }
-
+    
     .location {
         font-size: 15px;
         color: #666;
     }
-
+    
     .job_age {
         font-size: 13px;
         color: gray;
     }
-
+    
     .iaLabel {
         color: #f60;
     }
-
+    
     #indJobContent a {
         color: #00c;
     }
-
+    
     #indeed_widget_header {
         font-size: 18px;
         padding-bottom: 5px;
@@ -162,7 +162,21 @@
             } else if (formInputs[i].name == 'l') {
                 window.ind_l = formInputs[i].value;
             }
-        } // make the other form match formInputs=document.getElementsByClassName('indeed_jobform')[which_form ? 0 : 1].elements; for(var i=0;i<formInputs.length;i++){ if(formInputs[i].name == 'q') { formInputs[i].value = window.ind_q; } else if(formInputs[i].name == 'l') { formInputs[i].value = window.ind_l; } } document.cookie = 'IND_RQ=q=' + window.ind_q + '&l=' + window.ind_l; document.getElementById('results').style.opacity = 0.3; window.ind_nr = 1; window.indeedJobroll.getJobs(0); window.scrollTo(0,0); }
+        } // make the other form match 
+        formInputs = document.getElementsByClassName('indeed_jobform')[which_form ? 0 : 1].elements;
+        for (var i = 0; i < formInputs.length; i++) {
+            if (formInputs[i].name == 'q') {
+                formInputs[i].value = window.ind_q;
+            } else if (formInputs[i].name == 'l') {
+                formInputs[i].value = window.ind_l;
+            }
+        }
+        document.cookie = 'IND_RQ=q=' + window.ind_q + '&l=' + window.ind_l;
+        document.getElementById('results').style.opacity = 0.3;
+        window.ind_nr = 1;
+        window.indeedJobroll.getJobs(0);
+        window.scrollTo(0, 0);
+    }
 </script>
 <div id='indeed_widget_wrapper' style=''>
     <div id='indeed_widget_header'>Jobs from Indeed</div>
